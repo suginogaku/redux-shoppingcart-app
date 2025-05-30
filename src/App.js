@@ -4,6 +4,7 @@ import CartContainer from './components/CartContainer';
 import Navbar from './components/Navbar';
 import { useSelector, useDispatch } from 'react-redux';
 import { calculateTotals } from './features/cart/CartSlice';
+import Modal from './components/Modal';
 
 function App() {
   // cartのstateが変化するたびにcalculateTotalsをdispatchするuseEffect
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <main>
+      <Modal />
       <Navbar />
       <CartContainer />
     </main>

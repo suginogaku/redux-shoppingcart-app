@@ -10,6 +10,7 @@ function App() {
   // cartのstateが変化するたびにcalculateTotalsをdispatchするuseEffect
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const { isOpan } = useSelector((state) => state.modal);
 
   useEffect(() => {
     dispatch(calculateTotals());
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <main>
-      <Modal />
+      {isOpan && <Modal />}
       <Navbar />
       <CartContainer />
     </main>
